@@ -25,10 +25,9 @@ namespace AttandanceAPI.Controllers
             var user=_context.Shed_Incharge_Details.Where(i=>i.AttendanceUserId==model.UserId && i.AttendanceUserPassword==model.Password).ToList();
 
             if (user.Count() == 0) {
-                return BadRequest(new { message = "Invalid User" });
+                return BadRequest(new { message = "User not found" });
             }
             var shedDetails=_context.Shed_Details.Where(i=>i.ShedIncharge_StaffNo==user[0].ShedIncharge_StaffNo).ToList();
-            
             var shedLatitude=shedDetails[0].Shed_Latitude;
             var shedLongitude=shedDetails[0].Shed_Longitude;
             UserReturnResponse userReturnResponse=new UserReturnResponse();
