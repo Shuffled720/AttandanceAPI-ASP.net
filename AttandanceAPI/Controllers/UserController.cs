@@ -1,5 +1,5 @@
 ﻿using AttandanceAPI.Data;
-using AttandanceAPI.Models;
+using AttandanceAPI.Models.ApiResponse;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
